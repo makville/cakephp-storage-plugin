@@ -4,9 +4,7 @@
     "type": "cakephp-plugin",
     "license": "MIT",
     "require": {
-        "cakephp/cakephp": "^3.5"
-    },
-    "require": {
+        "cakephp/cakephp": "^3.5",
         "aws/aws-sdk-php": "^3.24"
     },
     "require-dev": {

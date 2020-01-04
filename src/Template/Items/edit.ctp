@@ -16,10 +16,17 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body" style="display: block;">
+                <?= $this->Form->create($item, ['type' => 'file']) ?>
                 <?php
-                echo $this->Form->create($item, ['type' => 'file']);
-                echo $this->Form->input('label', ['class' => 'form-control']);
-                echo $this->Form->input('description', ['class' => 'form-control']);
+                echo $this->Form->input('bucket_id', ['value' => $bucketId, 'empty' => true, 'type' => 'hidden']);
+                if (is_null($attach)) {
+                    echo $this->Form->input('label', ['class' => 'form-control']);
+                    echo $this->Form->input('description', ['class' => 'form-control']);
+                }
+                ?>
+                <p></p>
+                <?php
+                echo $this->Form->input('item', ['type' => 'file', 'label' => '']);
                 ?>
                 <p></p>
                 <?= $this->Form->button(__('Save')) ?>

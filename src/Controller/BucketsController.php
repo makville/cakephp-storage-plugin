@@ -49,12 +49,12 @@ class BucketsController extends AppController {
         if ($this->request->is('post')) {
             $bucket = $this->Buckets->patchEntity($bucket, $this->request->data);
             if ($this->Buckets->save($bucket)) {
-                $this->Flash->success(__('The bucket has been saved.'));
+                $this->Flash->success(__('The folder has been saved.'));
                 if (!$this->request->is('ajax')) {
                     return $this->redirect(['action' => 'index']);
                 }
             } else {
-                $this->Flash->error(__('The bucket could not be saved. Please, try again.'));
+                $this->Flash->error(__('The folder could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('bucket'));
@@ -75,12 +75,12 @@ class BucketsController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $bucket = $this->Buckets->patchEntity($bucket, $this->request->data);
             if ($this->Buckets->save($bucket)) {
-                $this->Flash->success(__('The bucket has been saved.'));
+                $this->Flash->success(__('The folder has been saved.'));
                 if (!$this->request->is('ajax')) {
                     return $this->redirect(['action' => 'index']);
                 }
             } else {
-                $this->Flash->error(__('The bucket could not be saved. Please, try again.'));
+                $this->Flash->error(__('The folder could not be saved. Please, try again.'));
             }
         }
         $this->set(compact('bucket'));
@@ -98,13 +98,15 @@ class BucketsController extends AppController {
         $this->request->allowMethod(['post', 'delete']);
         $bucket = $this->Buckets->get($id);
         if ($this->Buckets->delete($bucket)) {
-            $this->Flash->success(__('The bucket has been deleted.'));
+            $this->Flash->success(__('The folder has been deleted.'));
         } else {
-            $this->Flash->error(__('The bucket could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The folder could not be deleted. Please, try again.'));
         }
         if (!$this->request->is('ajax')) {
             return $this->redirect(['action' => 'index']);
         }
+        $this->set(compact('bucket'));
+        $this->set('_serialize', ['bucket']);
     }
 
     public function show($id = null, $attach = null) {

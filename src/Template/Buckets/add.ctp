@@ -17,9 +17,9 @@
             <!-- /.box-header -->
             <div class="box-body" style="display: block;">
                 <?php
-                echo $this->Form->create($item, ['type' => 'file']);
-                echo $this->Form->input('label', ['class' => 'form-control']);
-                echo $this->Form->input('description', ['class' => 'form-control']);
+                echo $this->Form->create($bucket);
+                echo $this->Form->input('name', ['class' => 'form-control']);
+                echo $this->Form->input('parent', ['type' => 'hidden']);
                 ?>
                 <p></p>
                 <?= $this->Form->button(__('Save')) ?>

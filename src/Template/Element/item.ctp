@@ -20,10 +20,10 @@ switch ($item->type) {
 }
 if ( is_null($attach)) {
     $name = (strlen($item->name) > 21) ? substr($item->name, 0, 18) . '...' : $item->name;
-    $extra = '<div class="deleter" style="display: none;">' . $this->Form->postLink('<i class="fontello-trash"></i>', ['plugin' => 'MakvilleStorage', 'controller' => 'items', 'action' => 'delete', $item->id], ['escape' => false, 'confirm' => 'Are you sure you want to delete this item?']) . '</div>';
+    $extra = '<div class="deleter">' . $this->Form->postLink('<i class="fa fa-trash"></i>', ['plugin' => 'MakvilleStorage', 'controller' => 'items', 'action' => 'delete', $item->id], ['escape' => false, 'confirm' => 'Are you sure you want to delete this item?']) . '</div>';
 } else  {
     $name = (strlen($item->name) > 12) ? substr($item->name, 0, 9) . '...' : $item->name;
-    $extra = '<div class="attacher" style="display: none;"><a href="#"><i class="fa fa-paperclip"></i></a></div>';
+    $extra = '<div class="attacher"><a href="#"><i class="fa fa-paperclip"></i></a></div>';
 }
 ?>
 <?= $this->Html->link('<div class="items large-2 medium-2 columns">

@@ -1,4 +1,5 @@
 $(function () {
+    $('.items').find('.deleter, .attacher').hide();
     $('.items').hover(function () {
         $(this).find('.deleter, .attacher').show();
     }, function () {
@@ -27,8 +28,11 @@ $(function () {
         }
     });
     $('#delete-folder').click(function () {
+        var $folder = $(this).attr('data-item');
+        if ($folder === '' || $folder === '0') {
+            return alert('You can not delete the home folder');
+        }
         if (confirm('Do you want to delete the current folder and its contents?')) {
-            var $folder = $(this).attr('data-item');
             var $parent = $(this).attr('data-parent');
             $.post($settings.storageRootUrl + 'buckets/delete/' + $folder + '.json', {}, function ($response, $status) {
                 if ($status === 'success') {
