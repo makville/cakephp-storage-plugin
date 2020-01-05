@@ -2,6 +2,7 @@
 
 namespace MakvilleStorage\Controller;
 
+use Cake\Core\Configure;
 use App\Controller\AppController as BaseController;
 
 class AppController extends BaseController {
