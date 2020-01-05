@@ -7,11 +7,11 @@ echo $this->Html->css('MakvilleStorage.style');
             <div class="panel-heading">
                 <h3 class="panel-title">
                     <?php if ($id > 0) : ?>
-                        <h3 class="box-title"><?= $this->Html->link('<i class="fa fa-arrow-left"></i>', ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'show', $bucket->parent, $attach], ['escape' => false, 'title' => 'Previous folder']); ?>
+                        <h3 class="box-title"><?= $this->Html->link('<i class="fa fa-arrow-left"></i>', ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'manage', $bucket->parent, $attach], ['escape' => false, 'title' => 'Previous folder']); ?>
                             <span style="font-size: 14px; font-weight: bold;">
                                 <?php
                                 foreach ($ancestory as $id => $ancestor) {
-                                    echo $this->Html->link($ancestor, ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'show', $id, $attach]) . '&nbsp;/&nbsp;';
+                                    echo $this->Html->link($ancestor, ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'manage', $id, $attach]) . '&nbsp;/&nbsp;';
                                 }
                                 ?>
                                 <?= $bucket->name; ?>

@@ -71,7 +71,7 @@ class ItemsController extends AppController {
             $item->status = \MakvilleStorage\Model\Table\ItemsTable::ITEM_STATUS_LOCAL;
             if ($this->Items->saveItem($item)) {
                 $this->Flash->success(__('The file has been saved.'));
-                return $this->redirect(['controller' => 'buckets', 'action' => 'show', $bucketId, $attach]);
+                return $this->redirect(['controller' => 'buckets', 'action' => 'manage', $bucketId, $attach]);
             } else {
                 $this->Flash->error(__('The item could not be saved. Please, try again.'));
             }
@@ -123,7 +123,7 @@ class ItemsController extends AppController {
             $this->Flash->error(__('The item could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['controller' => 'buckets', 'action' => 'show', $item->bucket_id]);
+        return $this->redirect(['controller' => 'buckets', 'action' => 'manage', $item->bucket_id]);
     }
 
 }

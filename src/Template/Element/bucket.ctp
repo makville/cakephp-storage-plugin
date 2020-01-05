@@ -16,5 +16,5 @@ if (is_null($attach)) {
         $this->Html->image('MakvilleStorage.icons/bucket.jpg', ['plugin' => 'MakvilleStorage']) . 
     '</div>
     <p class="bucket-name">' . $name . '</p>
-</div>', ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => isset($action) ? $action : 'show', $bucket->id, $attach], ['escape' => false, 'title' => $bucket->name]);
+</div>', ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => isset($action) ? $action : 'manage', $bucket->id, $attach], ['escape' => false, 'title' => $bucket->name]);
 ?>

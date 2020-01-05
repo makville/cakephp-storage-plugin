@@ -110,7 +110,7 @@ class BucketsController extends AppController {
         $this->set('_serialize', ['bucket']);
     }
 
-    public function show($id = null, $attach = null) {
+    public function manage($id = null, $attach = null) {
         if ( !is_null($attach)) {
             $this->viewBuilder()->layout('lite');
         }

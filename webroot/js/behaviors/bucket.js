@@ -44,6 +44,9 @@ $(function () {
     });
     $('#rename-folder').click(function () {
         var $folder = $(this).attr('data-item');
+        if ($folder === '' || $folder === '0') {
+            return alert('You can not rename the home folder');
+        }
         var $oldName = $(this).attr('data-name');
         var $name = prompt('New folder name', $oldName);
         if ($name !== null) {
