@@ -126,6 +126,7 @@ class BucketsController extends AppController {
     }
 
     public function browse($id = null, $attach = null) {
+        $this->viewBuilder()->setLayout(Configure::read('makville-mailer-browse-layout', 'admin'));
         if ( !is_null($attach)) {
             $this->viewBuilder()->layout('lite');
         }
