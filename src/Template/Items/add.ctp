@@ -18,8 +18,10 @@
             <div class="box-body" style="display: block;">
                 <?php
                 echo $this->Form->create($item, ['type' => 'file']);
+                echo $this->Form->input('bucket_id', ['value' => $bucketId, 'empty' => true, 'type' => 'hidden']);
                 echo $this->Form->input('label', ['class' => 'form-control']);
                 echo $this->Form->input('description', ['class' => 'form-control']);
+                echo $this->Form->input('item', ['type' => 'file', 'label' => '']);
                 ?>
                 <p></p>
                 <?= $this->Form->button(__('Save')) ?>
