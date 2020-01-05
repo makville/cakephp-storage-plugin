@@ -2,6 +2,7 @@
 
 namespace MakvilleStorage\Controller;
 
+use Cake\Core\Configure;
 use MakvilleStorage\Controller\AppController;
 
 /**
