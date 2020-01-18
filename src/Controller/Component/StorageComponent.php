@@ -25,7 +25,7 @@ class StorageComponent extends Component {
     private $bucketsTable;
     private $itemsTable;
     
-    public function initialize(array $config) {
+    public function initialize(array $config): void {
         parent::initialize($config);
         $this->locator = new TableLocator();
         $config = $this->locator->exists('MakvilleStorage.Items') ? [] : ['className' => 'MakvilleStorage\Model\Table\ItemsTable'];

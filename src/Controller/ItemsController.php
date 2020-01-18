@@ -49,9 +49,9 @@ class ItemsController extends AppController {
      */
     public function add($bucketId = null, $attach = null) {
         if (!is_null($attach)) {
-            $this->viewBuilder()->layout('lite');
+            $this->viewBuilder()->setLayout('lite');
         }
-        $item = $this->Items->newEntity();
+        $item = $this->Items->newEmptyEntity();
         if ($this->request->is('post')) {
             //do the upload
             $bucketId = $this->request->data('bucket_id');

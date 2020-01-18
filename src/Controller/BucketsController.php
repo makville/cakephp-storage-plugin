@@ -46,7 +46,7 @@ class BucketsController extends AppController {
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
     public function add() {
-        $bucket = $this->Buckets->newEntity();
+        $bucket = $this->Buckets->newEmptyEntity();
         if ($this->request->is('post')) {
             $bucket = $this->Buckets->patchEntity($bucket, $this->request->data);
             if ($this->Buckets->save($bucket)) {
@@ -112,7 +112,7 @@ class BucketsController extends AppController {
 
     public function manage($id = null, $attach = null) {
         if ( !is_null($attach)) {
-            $this->viewBuilder()->layout('lite');
+            $this->viewBuilder()->setLayout('lite');
         }
         //get all root buckets and root $items
         if (!is_null($id) && is_numeric($id) && $id > 0) {
@@ -129,7 +129,7 @@ class BucketsController extends AppController {
     public function browse($id = null, $attach = null) {
         $this->viewBuilder()->setLayout(Configure::read('makville-mailer-browse-layout', 'admin'));
         if ( !is_null($attach)) {
-            $this->viewBuilder()->layout('lite');
+            $this->viewBuilder()->setLayout('lite');
         }
         //get all root buckets and root $items
         if (!is_null($id) && is_numeric($id) && $id > 0) {
