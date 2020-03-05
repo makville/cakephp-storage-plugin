@@ -76,8 +76,8 @@ class ItemsController extends AppController {
                 $this->Flash->error(__('The item could not be saved. Please, try again.'));
             }
         }
-        $buckets = $this->Items->Buckets->find('list', ['limit' => 200]);
-        $this->set(compact('item', 'buckets', 'bucketId', 'attach'));
+        $bucket = $this->Items->Buckets->get($bucketId);
+        $this->set(compact('item', 'bucket', 'bucketId', 'attach'));
         $this->set('_serialize', ['item']);
     }
 

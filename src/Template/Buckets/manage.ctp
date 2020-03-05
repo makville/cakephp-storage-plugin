@@ -10,8 +10,8 @@ echo $this->Html->css('MakvilleStorage.style');
                         <h3 class="box-title"><?= $this->Html->link('<i class="fa fa-arrow-left"></i>', ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'manage', $bucket->parent, $attach], ['escape' => false, 'title' => 'Previous folder']); ?>
                             <span style="font-size: 14px; font-weight: bold;">
                                 <?php
-                                foreach ($ancestory as $id => $ancestor) {
-                                    echo $this->Html->link($ancestor, ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'manage', $id, $attach]) . '&nbsp;/&nbsp;';
+                                foreach ($ancestory as $idd => $ancestor) {
+                                    echo $this->Html->link($ancestor, ['plugin' => 'MakvilleStorage', 'controller' => 'buckets', 'action' => 'manage', $idd, $attach]) . '&nbsp;/&nbsp;';
                                 }
                                 ?>
                                 <?= $bucket->name; ?>
