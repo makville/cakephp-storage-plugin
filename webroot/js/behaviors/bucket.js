@@ -37,7 +37,7 @@ $(function () {
             $.post($settings.storageRootUrl + 'buckets/delete/' + $folder + '.json', {}, function ($response, $status) {
                 if ($status === 'success') {
                     //show the parent folder
-                    window.location = $settings.storageRootUrl + 'buckets/show/' + $parent;
+                    window.location = $settings.storageRootUrl + 'buckets/manage/' + $parent;
                 }
             });
         }
