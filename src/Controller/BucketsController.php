@@ -144,6 +144,7 @@ class BucketsController extends AppController {
     }
     
     public function publicView ($id = null) {
+        $this->viewBuilder()->setLayout('default');
         //get all root buckets and root $items
         if (!is_null($id) && is_numeric($id) && $id > 0) {
             $ancestory = $this->Buckets->getBucketAncestors($id);

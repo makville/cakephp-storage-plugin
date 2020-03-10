@@ -79,7 +79,7 @@ class BucketsTable extends Table {
             $items = $this->Items->find()->where(['bucket_id IS NULL']);
         }
         if ($access == 'public') {
-            $item->where(['access' => 'public']);
+            $items->where(['access' => 'public']);
         }
         return ['buckets' => $buckets, 'items' => $items];
     }
