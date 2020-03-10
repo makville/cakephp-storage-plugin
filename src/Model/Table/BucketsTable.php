@@ -70,13 +70,16 @@ class BucketsTable extends Table {
         return $validator;
     }
 
-    public function getBucketContent($id = null) {
+    public function getBucketContent($id = null, $access = 'private') {
         if (!is_null($id) && is_numeric($id) && $id > 0) {
             $buckets = $this->find()->where(['parent' => $id]);
             $items = $this->Items->find()->where(['bucket_id' => $id]);
         } else {
             $buckets = $this->find()->where(['parent IS NULL']);
             $items = $this->Items->find()->where(['bucket_id IS NULL']);
+        }
+        if ($access == 'public') {
+            $item->where(['access' => 'public']);
         }
         return ['buckets' => $buckets, 'items' => $items];
     }

@@ -143,9 +143,16 @@ class BucketsController extends AppController {
         $this->set(compact('homeContent', 'bucket', 'ancestory', 'attach', 'id'));
     }
     
-    public function test() {
-        var_dump($this->Buckets->getBucketAncestors(3));
-        exit();
+    public function publicView ($id = null) {
+        //get all root buckets and root $items
+        if (!is_null($id) && is_numeric($id) && $id > 0) {
+            $ancestory = $this->Buckets->getBucketAncestors($id);
+            $bucket = $this->Buckets->get($id);
+        } else {
+            $ancestory = [];
+            $bucket = $this->Buckets->newEntity(['name' => 'Home']);
+        }
+        $homeContent = $this->Buckets->getBucketContent($id, 'public');
+        $this->set(compact('homeContent', 'bucket', 'ancestory', 'id'));
     }
-
 }

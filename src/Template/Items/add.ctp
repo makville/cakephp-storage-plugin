@@ -21,6 +21,7 @@
                 echo $this->Form->input('bucket_id', ['value' => $bucketId, 'empty' => true, 'type' => 'hidden']);
                 echo $this->Form->input('label', ['class' => 'form-control']);
                 echo $this->Form->input('description', ['class' => 'form-control']);
+                echo $this->Form->input('access', ['label' => 'Allow public access to the resource?', 'options' => ['private' => 'No', 'public' => 'Yes']]);
                 echo $this->Form->input('item', ['type' => 'file', 'label' => '']);
                 ?>
                 <p></p>

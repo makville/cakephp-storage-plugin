@@ -64,6 +64,7 @@ class ItemsController extends AppController {
             $item->bucket_id = (is_numeric($bucketId) && $bucketId > 0 ) ? $bucketId : null;
             $item->name = $filename;
             $item->label = $this->request->data('label');
+            $item->access = $this->request->data('access');
             $item->description = $this->request->data('description');
             $item->size = $_FILES['item']['size'];
             $item->type = $_FILES['item']['type'];
